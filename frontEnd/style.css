@@ -1,0 +1,52 @@
+.vendingMachine {
+    display: flex;
+    justify-content: center;
+    position: relative;
+    top: 10%;
+}
+
+.vendingMachineItems {
+    background:pink;
+
+}
+
+.vendingMachineMenu {
+    width: 150px;
+    height: 503px;
+    border: 3px solid black;
+    justify-content: center;
+}
+
+table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    font-size: 30px;
+  }
+  
+  td, th {
+    border: 3px solid black;
+    text-align: left;
+    padding: 8px;
+    width: 50px;
+    height: 100px;
+  }
+  
+  tr:nth-child(even) {
+    background-color: #dddddd;
+  }
+
+.selectAnimation {
+    width: 100px;
+    height: 100px;
+}
+
+.vendingMachineMenuSelect input{
+    width: 100%;
+    border: 2px solid black;
+}
+
+.selectAnimation {
+    width: 100%;
+    padding-left: 15px;
+    border: solid 2px black;
+}
