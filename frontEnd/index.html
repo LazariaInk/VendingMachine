@@ -5,12 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="zeroStyle.css">
     <link rel="stylesheet" href="style.css">
-    <title>Document</title>
+    <title>Vending Machine</title>
 </head>
 <body>
-    <h2>Vending Machine</h2>
+    
+
+<div class="vendingMachineBody">
     <div class="vendingMachine">
-        
         <div class="vendingMachineItems">
             <table>
                 <tr>
@@ -67,12 +68,41 @@
         </div>
         <div class="vendingMachineMenu">
             <div class="vendingMachineMenuSelect">
-                <div class="selectAnimation"><iframe src="https://giphy.com/embed/XVe4e1jA1KjSwccKsg" width="120" height="90" frameBorder="0" class="giphy-embed" allowFullScreen></iframe></div>
-                <input type="text"  placeholder="Tap here!!!">
-
+                <div class="selectAnimation"><iframe src="https://giphy.com/embed/XVe4e1jA1KjSwccKsg" href="#" width="120" height="90" frameBorder="0" class="giphy-embed" allowFullScreen></iframe></div>
+                <div class="select">
+                    <div class="selectItem">
+                        <select class="selectItemByLetter">
+                            <option value="A">A</option>
+                            <option value="B">B</option>
+                            <option value="C">C</option>
+                            <option value="D">D</option>
+                          </select>
+                          <select class="selectItemByNumber">
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                            <option value="6">6</option>
+                            <option value="7">7</option>
+                            <option value="8">8</option>
+                          </select>
+                    </div>
+                </div>
+                    <button class="orderButton">ORDER!</button>
+                </div>
+                <div class="vendingMachineMenuPay">
+                    <div class="payAnimation"><iframe src="https://giphy.com/embed/3qIc6TFP05B7y0CylW" width="120" height="40" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/money-dollar-sign-3qIc6TFP05B7y0CylW"></a></p></div>
+                    <input type="number">
+                    <span class="dollarSymbol">$</span><button class="buyButton">BUY!!</button>
+                </div>
             </div>
             
         </div>
+        <h1>Vending Machine</h1>
     </div>
+    
+</div>
+    <script src="app.js"></script>
 </body>
 </html>

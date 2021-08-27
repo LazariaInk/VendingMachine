@@ -1,12 +1,25 @@
+body {
+    background: rgb(192, 190, 190);
+}
 .vendingMachine {
+    background: orange;
     display: flex;
     justify-content: center;
     position: relative;
-    top: 10%;
+    width: 688.88px;
+}
+
+.vendingMachineBody {
+    background: rgb(253, 179, 40);
+    width: 696px;
+    height: 700px;
+    border: 5px solid black;
+    margin-left: 25%;
+    margin-top: 5%;
 }
 
 .vendingMachineItems {
-    background:pink;
+    background:white;
 
 }
 
@@ -38,6 +51,7 @@ table {
 .selectAnimation {
     width: 100px;
     height: 100px;
+    background: white;
 }
 
 .vendingMachineMenuSelect input{
@@ -50,3 +64,63 @@ table {
     padding-left: 15px;
     border: solid 2px black;
 }
+
+
+.selectItem {
+    display: flex;
+}
+
+.select{
+    display: flex;
+    text-align-last:center;
+}
+
+.selectItemByLetter {
+    width: 73.5px;
+}
+
+.selectItemByNumber {
+    width: 70.2px;
+}
+
+.orderButton {
+    width: 144px;
+}
+
+.vendingMachineMenuPay {
+    margin-top: 100px;
+    border: solid 1px black;
+}
+
+.vendingMachineMenuPay input {
+    width :143px;
+}
+
+.buyButton {
+    width: 143.5px;
+}
+
+.dollarSymbol{
+    position: absolute;
+    margin-top: -29px;
+    margin-left: 130px;
+    font-size: 19px;
+}
+
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.payAnimation {
+    background: white;
+}
+
+h1 {
+    font-family: fantasy;
+}
+
+
+
+
