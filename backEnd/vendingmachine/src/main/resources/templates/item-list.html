@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Items</title>
+</head>
+<body>
+<div th:switch="${items}">
+    <h2 th:case="null">items not found!</h2>
+    <div th:case="*">
+        <h2>Items</h2>
+        <table>
+            <thead>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Amount</th>
+                <th>Price</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="item : ${items}">
+                <td th:text="${item.id}"></td>
+                <td th:text="${item.name}"></td>
+                <td th:text="${item.amount}"></td>
+                <td th:text="${item.price}"></td>
+                <td><a th:href="@{item-update/{id}(id=${item.id})}">Edit</a></td>
+                <td><a th:href="@{item-delete/{id}(id=${item.id})}">Delete</a></td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+    <p><a href="/item-create">Create item</a></p>
+</div>
+</body>
+</html>
