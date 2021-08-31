@@ -25,7 +25,7 @@ public class VendingmachineApplication {
 			// read JSON and load json
 			ObjectMapper mapper = new ObjectMapper();
 			TypeReference<List<Item>> typeReference = new TypeReference<List<Item>>(){};
-			InputStream inputStream = TypeReference.class.getResourceAsStream("/json/config.json");
+			InputStream inputStream = TypeReference.class.getResourceAsStream("/json/item.json");
 			try {
 				List<Item> users = mapper.readValue(inputStream,typeReference);
 				itemService.saveAll(users);

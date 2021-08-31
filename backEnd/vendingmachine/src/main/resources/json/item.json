@@ -1,0 +1,33 @@
+[{
+  "name": "Snickers",
+  "amount": 10,
+  "price": "$1.35"
+}, {
+  "name": "Hersheys",
+  "amount": 10,
+  "price": "$2.25"
+}, {
+  "name": "Hersheys Almond",
+  "amount": 10,
+  "price": "$1.80"
+}, {
+  "name": "Hersheys Special Dark",
+  "amount": 10,
+  "price": "$1.75"
+}, {
+  "name": "Reese's",
+  "amount": 10,
+  "price": "$1.05"
+}, {
+  "name": "Nutrageous",
+  "amount": 10,
+  "price": "$1.30"
+}, {
+  "name": "Baby Ruth",
+  "amount": 10,
+  "price": "$2.50"
+}, {
+  "name": "Milky Way",
+  "amount": 10,
+  "price": "$1.00"
+}]

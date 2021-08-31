@@ -1,36 +1,71 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+
 <head>
     <meta charset="UTF-8">
-    <title>Items</title>
+    <link href="../static/style.css" th:href="@{/style.css}" rel="stylesheet">
+    <link href="../static/zeroStyle.css" th:href="@{/zeroStyle.css}" rel="stylesheet">
 </head>
 <body>
 <div th:switch="${items}">
     <h2 th:case="null">items not found!</h2>
     <div th:case="*">
-        <h2>Items</h2>
-        <table>
-            <thead>
-            <tr>
-                <th>Id</th>
-                <th>Name</th>
-                <th>Amount</th>
-                <th>Price</th>
-            </tr>
-            </thead>
-            <tbody>
-            <tr th:each="item : ${items}">
-                <td th:text="${item.id}"></td>
-                <td th:text="${item.name}"></td>
-                <td th:text="${item.amount}"></td>
-                <td th:text="${item.price}"></td>
-                <td><a th:href="@{item-update/{id}(id=${item.id})}">Edit</a></td>
-                <td><a th:href="@{item-delete/{id}(id=${item.id})}">Delete</a></td>
-            </tr>
-            </tbody>
-        </table>
+        <h1>Vending Machine</h1>
+        <div class="vendingMachineBody">
+            <div class="vendingMachine">
+                <div class="vendingMachineItems">
+                    <table>
+                        <tr>
+                            <td th:each="item : ${items}"><p th:text="${item.name}"></p></td>
+                        </tr>
+                        <tr>
+                            <td th:each="item : ${items}" th:value="${item.id}" th:unless="${item.id = (item.id+5)}"><p th:text="${item.name}"></p></td>
+                        </tr>
+                        <tr>
+                            <td th:each="item : ${items}"><p th:text="${item.name}"></p></td>
+                        </tr>
+                        <tr>
+                            <td th:each="item : ${items}"><p th:text="${item.name}"></p></td>
+                        </tr>
+                        <tr>
+                            <td th:each="item : ${items}"><p th:text="${item.name}"></p></td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="vendingMachineMenu">
+                    <div class="vendingMachineMenuSelect">
+                        <div class="selectAnimation"><iframe src="https://giphy.com/embed/XVe4e1jA1KjSwccKsg" href="#" width="120" height="90" frameBorder="0" class="giphy-embed" allowFullScreen></iframe></div>
+                        <div class="select">
+                            <div class="selectItem">
+                                <select class="selectItemByLetter">
+                                    <option value="A">A</option>
+                                    <option value="B">B</option>
+                                    <option value="C">C</option>
+                                    <option value="D">D</option>
+                                </select>
+                                <select class="selectItemByNumber">
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5</option>
+                                    <option value="6">6</option>
+                                    <option value="7">7</option>
+                                    <option value="8">8</option>
+                                </select>
+                            </div>
+                        </div>
+                        <button class="orderButton">ORDER!</button>
+                    </div>
+                    <div class="vendingMachineMenuPay">
+                        <div class="payAnimation"><iframe src="https://giphy.com/embed/3qIc6TFP05B7y0CylW" width="120" height="40" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/money-dollar-sign-3qIc6TFP05B7y0CylW"></a></p></div>
+                        <input type="number">
+                        <span class="dollarSymbol">$</span><button class="buyButton">BUY!!</button>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
-    <p><a href="/item-create">Create item</a></p>
 </div>
 </body>
 </html>
