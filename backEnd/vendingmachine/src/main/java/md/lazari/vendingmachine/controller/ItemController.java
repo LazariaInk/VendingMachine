@@ -19,20 +19,16 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.net.URL;
 import java.util.List;
+import java.util.Optional;
 
 @Controller
 public class ItemController {
 
     private final static Logger logger = LoggerFactory.getLogger(ItemController.class);
-    private final ItemService itemService;
-
-    private ItemRepository itemRepository;
-
     @Autowired
-    public ItemController(ItemService itemService) {
-        this.itemService = itemService;
-    }
-
+    private ItemService itemService;
+    @Autowired
+    private ItemRepository itemRepository;
 
     @GetMapping("/items")
     public String findAll(Model model){
@@ -41,16 +37,19 @@ public class ItemController {
         return "item-list";
     }
 
-
-
-
     @GetMapping("item-delete/{id}")
     public String deleteItem(@PathVariable("id") Integer id){
-        itemService.deleteById(id);
+        Optional<Item> optionalItem = itemRepository.findById(id);
+        if (optionalItem.isPresent()) {
+            Item item = optionalItem.get();
+            if (item.amount != 0) {
+                item.amount--;
+                itemRepository.save(item);
+            } else {
+                itemRepository.deleteById(id);
+            }
+        }
         return "redirect:/items";
     }
-
-
-
 
 }
