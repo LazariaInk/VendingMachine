@@ -87,6 +87,8 @@ p {
 
 .orderButton {
     width: 144px;
+    background-color: gray;
+    font-size: 20px;
 }
 
 .vendingMachineMenuPay {
