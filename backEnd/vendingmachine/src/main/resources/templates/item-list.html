@@ -3,8 +3,9 @@
 
 <head>
     <meta charset="UTF-8">
-    <link href="../static/styles/style.css" th:href="@{styles/style.css}" rel="stylesheet">
     <link href="../static/styles/zeroStyle.css" th:href="@{styles/zeroStyle.css}" rel="stylesheet">
+    <link href="../static/styles/style.css" th:href="@{styles/style.css}" rel="stylesheet">
+
 </head>
 <body>
 <div th:switch="${items}">
@@ -13,38 +14,22 @@
         <h1>Vending Machine</h1>
         <div class="vendingMachineBody">
             <div class="vendingMachine">
-                <div class="vendingMachineItems">
-                    <table>
-                        <tr>
-                            <td class="td" th:each="item,itemStat : ${items}"  th:value="${item.id}" th:unless="${itemStat.index > 7}"><a th:href="@{item-delete/{id}(id=${item.id})}"> <p th:text="${item.name}"></p></a></td>
-                        </tr>
-                        <tr>
-                            <td class="td" th:each="item,itemStat : ${items}"  th:value="${item.id}" th:unless="${itemStat.index > 7}"><a th:href="@{item-delete/{id}(id=${item.id})}"> <p th:text="${item.name} "></p></a></td>
-                        </tr>
-                        <tr>
-                            <td class="td" th:each="item,itemStat : ${items}"  th:value="${item.id}" th:unless="${itemStat.index > 7}"><a th:href="@{item-delete/{id}(id=${item.id})}"> <p th:text="${item.name}"></p></a></td>
-                        </tr>
-                        <tr>
-                            <td class="td" th:each="item,itemStat : ${items}"  th:value="${item.id}" th:unless="${itemStat.index > 7}"><a th:href="@{item-delete/{id}(id=${item.id})}"> <p th:text="${item.name}"></p></a></td>
-                        </tr>
-                        <tr>
-                            <td class="td" th:each="item,itemStat : ${items}"  th:value="${item.id}" th:unless="${itemStat.index > 7}"><a th:href="@{item-delete/{id}(id=${item.id})}"> <p th:text="${item.name}"></p></a></td>
-                        </tr>
-                    </table>
+                <div class="VendingMachineItems">
+                    <div class="gridItem" th:each="item,itemStat : ${items}"  th:value="${item.id}">
+                        <a th:href="@{item-delete/{id}(id=${item.id})}"> <p th:text="${item.name}"></p></a>
+                    </div>
                 </div>
                 <div class="vendingMachineMenu">
                     <div class="vendingMachineMenuSelect">
                         <div class="selectAnimation"><iframe src="https://giphy.com/embed/XVe4e1jA1KjSwccKsg" href="#" width="120" height="90" frameBorder="0" class="giphy-embed" allowFullScreen></iframe></div>
                         <div class="orderButton"><h3>Buy by press on item</h3></div>
-                    </div>  
+                    </div>
                     <div class="vendingMachineMenuPay">
                         <div class="payAnimation"><iframe src="https://giphy.com/embed/3qIc6TFP05B7y0CylW" width="120" height="40" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/money-dollar-sign-3qIc6TFP05B7y0CylW"></a></p></div>
                         <form th:action="@{/accounts}" th:object="${bankAccount}" method="post">
                             <input type="number" id="money" name="money">
                             <button type="submit">Add</button>
                         </form>
-                        <!-- <input type="number">
-                        <span class="dollarSymbol">$</span><button class="buyButton" th:href="@{accounts/add-money/}">Add money</button>-->
                     </div>
                 </div>
             </div>

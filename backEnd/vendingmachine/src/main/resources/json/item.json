@@ -30,4 +30,20 @@
   "name": "Milky Way",
   "amount": 10,
   "price": "$1.00"
+}, {
+  "name": "Coc-cola",
+  "amount": 10,
+  "price": "$4.25"
+}, {
+  "name": "Pepsi",
+  "amount": 10,
+  "price": "$4.25"
+}, {
+  "name": "Sprite",
+  "amount": 10,
+  "price": "$7.25"
+}, {
+  "name": "Fanta",
+  "amount": 10,
+  "price": "$3.25"
 }]
