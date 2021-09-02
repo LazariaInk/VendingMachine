@@ -33,7 +33,7 @@
                     </div>
                        <div class="moneyDisplay">
                            <h3>You sold is</h3>
-                           <h3  class="moneyDisplay" th:text="${bankAccount.money} % 1 == 0? ${bankAccount.money} :${#numbers.formatDecimal(bankAccount.money, 0, 2)}"></h3>
+                           <h3  class="moneyDisplay" th:text="${bankAccount.money} % 1 == 0? ${bankAccount.money} :${#numbers.formatDecimal(bankAccount.money, 1, 2)}"></h3>
                        </div>
                         <div class="takeMoney">
                             <a class= "takeMoneyDisplay" th:href="@{/deleteMoney}">take money</a>
