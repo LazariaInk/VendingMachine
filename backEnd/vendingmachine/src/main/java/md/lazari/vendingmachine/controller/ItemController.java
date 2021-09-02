@@ -44,11 +44,20 @@ public class ItemController {
             if (item.amount != 0) {
                 item.amount--;
                 bankAccountService.spendMoney(price);
+                if (bankAccountService.spendMoney(price) == false) {
+                    return "redirect:/items";
+                }
                 itemRepository.save(item);
             } else {
                 itemRepository.deleteById(id);
             }
         }
+        return "redirect:/items";
+    }
+
+    @GetMapping("/deleteMoney")
+    public String deleteMoney(){
+                bankAccountService.takeMoney();
         return "redirect:/items";
     }
 

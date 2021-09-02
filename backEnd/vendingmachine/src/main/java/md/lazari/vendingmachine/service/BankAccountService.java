@@ -28,7 +28,7 @@ public class BankAccountService {
         return true;
     }
 
-    public void takeMoney(double bankMoney) {
+    public void takeMoney() {
         Optional<BankAccount> bankAccountOptional = bankAccountRepository.findById(1);
         BankAccount bankAccount = bankAccountOptional.get();
         bankAccount.money = 0;

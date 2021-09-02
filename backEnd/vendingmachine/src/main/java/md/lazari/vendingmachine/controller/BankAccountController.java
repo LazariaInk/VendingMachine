@@ -2,6 +2,7 @@ package md.lazari.vendingmachine.controller;
 
 import md.lazari.vendingmachine.model.BankAccount;
 import md.lazari.vendingmachine.repository.BankAccountRepository;
+import md.lazari.vendingmachine.service.BankAccountService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
