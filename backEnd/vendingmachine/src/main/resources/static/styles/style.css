@@ -36,6 +36,10 @@ body {
     background-color: orange;
 }
 
+.addMoneyButton {
+    width: 142px;
+}
+
 
 tr:nth-child(even) {
     background-color: #dddddd;

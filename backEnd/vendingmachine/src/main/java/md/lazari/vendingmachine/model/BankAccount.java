@@ -1,7 +1,6 @@
 package md.lazari.vendingmachine.model;
 
 import lombok.Data;
-import org.springframework.beans.factory.annotation.Value;
 
 import javax.persistence.*;
 //TODO: Sa schimb din Back in Bank si repository

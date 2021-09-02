@@ -1,7 +1,6 @@
 package md.lazari.vendingmachine.model;
 
 import lombok.Data;
-
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -24,5 +23,6 @@ public class Item {
     public Integer amount;
 
     @Column(name = "price")
-    private String price;
+    public String price;
+
 }
