@@ -3,19 +3,42 @@
 <head>
     <meta charset="UTF-8">
     <title>Create user</title>
+    <script type = "text/javascript">
+        function validateForm()  {
+            var name = document.getElementById("name").value;
+            var amount = document.getElementById("amount").value;
+            var price = document.getElementById("price").value;
+
+            if(name== "") {
+                alert("Please enter item name");
+                return false;
+            }
+            if(amount == "") {
+                alert("Please enter item amount");
+                return false;
+            }
+            if(price=="") {
+                alert("Please enter item price")
+            }
+
+            alert("All datas are valid!")
+
+            return true;
+        }
+    </script>
 </head>
 <body>
-<form action="#" th:action="@{/add-item}" th:object="${item}" method="post">
+<form id="form"  name="myForm" onsubmit = "return validateForm()" action="#" th:action="@{/add-item}" th:object="${item}" method="post">
     <label for="name">Name</label>
-    <input type="text" th:field="*{name}" id="name" placeholder="Name">
+    <input name="name" type="text" th:field="*{name}" id="name" placeholder="Name">
 
     <label for="amount">Amount</label>
-    <input type="number" th:field="*{amount}" id="amount" placeholder="Amount">
+    <input name="amount" type="number" th:field="*{amount}" id="amount" placeholder="Amount">
 
     <label for="price">Price</label>
-    <input type="number" th:field="*{price}" id="price" placeholder="Price">
+    <input name="price" type="number" th:field="*{price}" id="price" placeholder="Price">
 
-    <input type="submit" value="Add item">
+    <input  type="submit" value="Add item">
 </form>
 </body>
 </html>
