@@ -18,9 +18,17 @@ public class VendingMachineHistory {
     private Integer id;
 
     @Column(name = "date")
-    private LocalDate date;
+    public LocalDate date;
 
     @Column(name = "info")
     public String info;
 
+    public VendingMachineHistory() {
+
+    }
+
+    public VendingMachineHistory(LocalDate date, String info) {
+        this.date = date;
+        this.info = info;
+    }
 }

@@ -12,22 +12,17 @@ import java.util.Optional;
 
 @Controller
 public class BankAccountController {
-    // TODO: schimba cu service
     @Autowired
     BankAccountRepository bankAccountRepository;
+    @Autowired
+    BankAccountService bankAccountService;
 
     @PostMapping("/accounts")
     public String addMoney(BankAccount bankAccount){
-        Optional<BankAccount> optionalBankAccount = bankAccountRepository.findById(1);
-        if (optionalBankAccount.isPresent()) {
-            BankAccount existingBankAccount = optionalBankAccount.get();
-            existingBankAccount.money += bankAccount.getMoney();
-            bankAccountRepository.save(existingBankAccount);
-        }
+        bankAccountService.addMoney(bankAccount);
 
         return "redirect:/items";
     }
-
 
     @RequestMapping("/bankAccount")
     public String showMoney(Model model){
@@ -35,6 +30,4 @@ public class BankAccountController {
         model.addAttribute("bankAccount", bankAccount);
         return "item-list";
     }
-
-
 }

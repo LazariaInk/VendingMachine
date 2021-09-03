@@ -35,5 +35,13 @@ public class BankAccountService {
         bankAccountRepository.save(bankAccount);
     }
 
+    public void addMoney(BankAccount bankAccount) {
+        Optional<BankAccount> optionalBankAccount = bankAccountRepository.findById(1);
+        if (optionalBankAccount.isPresent()) {
+            BankAccount existingBankAccount = optionalBankAccount.get();
+            existingBankAccount.money += bankAccount.getMoney();
+            bankAccountRepository.save(existingBankAccount);
+        }
+    }
 
 }

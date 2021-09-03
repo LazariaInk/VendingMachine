@@ -20,10 +20,6 @@ public class ItemService {
         return itemRepository.findAll();
     }
 
-    public Iterable<Item> list() {
-        return itemRepository.findAll();
-    }
-
     public void saveAll(List<Item> items) {
         itemRepository.saveAll(items);
     }
@@ -31,6 +27,10 @@ public class ItemService {
     public void saveOne(Item item) {
         item.price = "$" + String.valueOf(item.price);
         itemRepository.save(item);
+    }
+
+    public long count() {
+        return itemRepository.count();
     }
 
 }
