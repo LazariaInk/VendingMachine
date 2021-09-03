@@ -31,37 +31,14 @@ public class ItemController {
 
     @GetMapping("/items")
     public String findAll(Model model){
-        Iterable<Item> items = itemService.showAll();
-        model.addAttribute("items", items);
-
-        Optional<BankAccount> bankAccountOptional = bankAccountService.getBankAccount();
-        BankAccount bankAccount = bankAccountOptional.get();
-        model.addAttribute("bankAccount", bankAccount);
+        itemService.findAllItems(model,bankAccountService);
         return "item-list";
     }
 
     @GetMapping("item-delete/{id}")
     public String deleteItem(@PathVariable("id") Integer id){
-        Optional<Item> optionalItem = itemRepository.findById(id);
-        String stringPrice = itemRepository.findById(id).get().price;
-        Double price =Double.valueOf(stringPrice.replaceAll("\\$", ""));
-        if (optionalItem.isPresent()) {
-            Item item = optionalItem.get();
-            if (item.amount != 0) {
-                item.amount--;
-                String historyInfo = "Sell item: " + item.getName() + ", with price: " + item.price;
-                VendingMachineHistory vendingMachineHistory = new VendingMachineHistory(LocalDate.now(),historyInfo);
-                vendingMachineHistoryRepository.save(vendingMachineHistory);
-                bankAccountService.spendMoney(price);
-                if (bankAccountService.spendMoney(price) == false) {
-                    return "redirect:/items";
-                }
-                itemRepository.save(item);
-            } else {
-                itemRepository.deleteById(id);
-            }
-        }
-        return "redirect:/items";
+     String deleteItemPath = itemService.ItemFunctionality(id,vendingMachineHistoryRepository,bankAccountService);
+        return deleteItemPath;
     }
 
     @GetMapping("/deleteMoney")
@@ -80,6 +57,5 @@ public class ItemController {
         itemService.saveOne(item);
         return "redirect:/items";
     }
-
 
 }
