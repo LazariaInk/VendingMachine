@@ -132,11 +132,6 @@ body {
     box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
 }
 
-@font-face {
-    font-family: digitFont;
-    src: url(/fonts/digital-7.ttf);
-}
-
 .moneyDisplay {
     background-color: white;
 }
@@ -145,6 +140,19 @@ body {
     font-family: digitFont;
 }
 
+.adminPanel {
+    display: flex;
+    margin-left: 40%;
+}
+
+.adminPanelButton{
+    width: 100px;
+    margin-left: 15px;
+    height: 50px;
+    font-size: 18px;
+    background-color: #dddddd;
+    border: solid 2px black;
+}
 
 
 

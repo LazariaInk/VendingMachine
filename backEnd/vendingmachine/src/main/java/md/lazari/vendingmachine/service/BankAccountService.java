@@ -23,7 +23,7 @@ public class BankAccountService {
         Optional<BankAccount> bankAccountOptional = bankAccountRepository.findById(1);
         BankAccount bankAccount = bankAccountOptional.get();
         if (bankAccount.money < itemPrice) return false;
-        bankAccount.money -= itemPrice;
+        bankAccount.money -= (itemPrice/2);
         bankAccountRepository.save(bankAccount);
         return true;
     }

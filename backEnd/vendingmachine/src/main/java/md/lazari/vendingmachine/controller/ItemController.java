@@ -61,4 +61,16 @@ public class ItemController {
         return "redirect:/items";
     }
 
+    @GetMapping("/add-item")
+    public String createUserForm(Item item  ){
+        return "add-item";
+    }
+
+    @PostMapping("/add-item")
+    public String createUser(Item item){
+        itemService.saveOne(item);
+        return "redirect:/items";
+    }
+
+
 }

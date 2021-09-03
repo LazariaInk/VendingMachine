@@ -28,4 +28,9 @@ public class ItemService {
         itemRepository.saveAll(items);
     }
 
+    public void saveOne(Item item) {
+        item.price = "$" + String.valueOf(item.price);
+        itemRepository.save(item);
+    }
+
 }

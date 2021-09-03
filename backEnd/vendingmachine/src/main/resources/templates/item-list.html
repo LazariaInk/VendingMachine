@@ -12,6 +12,10 @@
     <h2 th:case="null">items not found!</h2>
     <div th:case="*">
         <h1>Vending Machine</h1>
+        <div class="adminPanel">
+           <div class="adminPanelButton"> <a href="/add-item">Add item</a> </div>
+           <div class="adminPanelButton"> <a href="www.google.com">See raports</a> </div>
+        </div>
         <div class="vendingMachineBody">
             <div class="vendingMachine">
                 <div class="VendingMachineItems">
@@ -27,8 +31,8 @@
                     <div class="vendingMachineMenuPay">
                         <div class="payAnimation"><iframe src="https://giphy.com/embed/3qIc6TFP05B7y0CylW" width="120" height="40" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/money-dollar-sign-3qIc6TFP05B7y0CylW"></a></p></div>
                         <form th:action="@{/accounts}" th:object="${bankAccount}" method="post">
-                            <input type="number" id="money" name="money">
-                            <button class="addMoneyButton" type="submit">Add</button>
+                            <input type="number" id="money"   name="money">
+                            <button class="addMoneyButton"   type="submit">Add</button>
                         </form>
                     </div>
                        <div class="moneyDisplay">
@@ -43,5 +47,6 @@
         </div>
     </div>
 </div>
+<script src="/static/styles/javaScript/js.js"></script>
 </body>
 </html>
