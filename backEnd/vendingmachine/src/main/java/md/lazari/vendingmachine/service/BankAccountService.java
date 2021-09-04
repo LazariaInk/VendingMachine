@@ -20,8 +20,11 @@ public class BankAccountService {
     }
 
     public boolean spendMoney(double itemPrice) {
+        System.out.println("spend +++++");
         Optional<BankAccount> bankAccountOptional = bankAccountRepository.findById(1);
         BankAccount bankAccount = bankAccountOptional.get();
+        System.out.println(bankAccount.money);
+        System.out.println(itemPrice);
         if (bankAccount.money < itemPrice) return false;
         bankAccount.money -= (itemPrice/2);
         bankAccountRepository.save(bankAccount);

@@ -24,13 +24,13 @@ public class ItemController {
 
     @GetMapping("/items")
     public String findAll(Model model){
-        itemService.findAllItems(model,bankAccountService);
+        itemService.findAllItems(model);
         return "item-list";
     }
 
     @GetMapping("item-delete/{id}")
     public String deleteItem(@PathVariable("id") Integer id){
-     String deleteItemPath = itemService.ItemFunctionality(id,vendingMachineHistoryRepository,bankAccountService);
+     String deleteItemPath = itemService.ItemFunctionality(id);
         return deleteItemPath;
     }
 
