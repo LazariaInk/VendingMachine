@@ -8,6 +8,7 @@
 <div th:switch="${historyList}">
     <h2 th:case="null">items not found!</h2>
     <div th:case="*">
+        <a href="items">Go back</a>
         <h1>History of Vending Machine</h1>
             <div class="vendingMachineHistoryList" th:each="history,historyStat : ${historyList}"  th:value="${history.id}">
                 <p>-------------------------------------------------------------------------------------------------------------------</p>
