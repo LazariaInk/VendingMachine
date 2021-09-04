@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml" xmlns="http://www.w3.org/1999/html">
+
+<head>
+    <meta charset="UTF-8">
+</head>
+<body>
+<div th:switch="${historyList}">
+    <h2 th:case="null">items not found!</h2>
+    <div th:case="*">
+        <h1>History of Vending Machine</h1>
+            <div class="vendingMachineHistoryList" th:each="history,historyStat : ${historyList}"  th:value="${history.id}">
+                <p>-------------------------------------------------------------------------------------------------------------------</p>
+                <p th:text="${history.date}"><p th:text="${history.info}"></p>
+            </div>
+    </div>
+</div>
+</body>
+</html>

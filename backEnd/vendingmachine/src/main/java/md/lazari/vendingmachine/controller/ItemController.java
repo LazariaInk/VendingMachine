@@ -1,8 +1,6 @@
 package md.lazari.vendingmachine.controller;
 
-import md.lazari.vendingmachine.model.BankAccount;
 import md.lazari.vendingmachine.model.Item;
-import md.lazari.vendingmachine.model.VendingMachineHistory;
 import md.lazari.vendingmachine.repository.ItemRepository;
 import md.lazari.vendingmachine.repository.VendingMachineHistoryRepository;
 import md.lazari.vendingmachine.service.BankAccountService;
@@ -12,15 +10,10 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
-import java.time.LocalDate;
-import java.util.Optional;
-
 @Controller
 public class ItemController {
     @Autowired
     private ItemService itemService;
-    @Autowired
-    private ItemRepository itemRepository;
 
     @Autowired
     private BankAccountService bankAccountService;

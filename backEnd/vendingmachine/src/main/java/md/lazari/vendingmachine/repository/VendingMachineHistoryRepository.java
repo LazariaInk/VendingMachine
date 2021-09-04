@@ -1,7 +1,7 @@
 package md.lazari.vendingmachine.repository;
 
 import md.lazari.vendingmachine.model.VendingMachineHistory;
-import org.springframework.data.repository.CrudRepository;
+import org.springframework.data.jpa.repository.JpaRepository;
 
-public interface VendingMachineHistoryRepository extends CrudRepository<VendingMachineHistory,Integer> {
+public interface VendingMachineHistoryRepository extends JpaRepository<VendingMachineHistory, Integer> {
 }
