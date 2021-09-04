@@ -6,3 +6,4 @@ To run this project you need to follow the next stapes:
   2.To download all dependeces what is added in maven.
   3.To download and config database, in this project is MySQL.
   4.To config the following file "application.properties" from resources package, in dependence of you database configuration, and server port.
+  5.And the last one, is to run project on page: localhost:(you port)/items
