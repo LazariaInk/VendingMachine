@@ -14,12 +14,13 @@
                 alert("Please enter item name");
                 return false;
             }
-            if(amount == "") {
+            if(amount <=0) {
                 alert("Please enter item amount");
                 return false;
             }
-            if(price=="") {
+            if(price <=0) {
                 alert("Please enter item price")
+                return false;
             }
 
             alert("All datas are valid!")

@@ -5,7 +5,17 @@
     <meta charset="UTF-8">
     <link href="../static/styles/zeroStyle.css" th:href="@{styles/zeroStyle.css}" rel="stylesheet">
     <link href="../static/styles/style.css" th:href="@{styles/style.css}" rel="stylesheet">
-
+    <script type = "text/javascript">
+        function validateForm()  {
+            var bankMoney = document.getElementById("money").value;
+            if(bankMoney<=0) {
+                alert("Please enter dollars");
+                return false;
+            }
+            alert("All datas are valid!")
+            return true;
+        }
+    </script>
 </head>
 <body>
 <div th:switch="${items}">
@@ -30,7 +40,7 @@
                     </div>
                     <div class="vendingMachineMenuPay">
                         <div class="payAnimation"><iframe src="https://giphy.com/embed/3qIc6TFP05B7y0CylW" width="120" height="40" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/money-dollar-sign-3qIc6TFP05B7y0CylW"></a></p></div>
-                        <form th:action="@{/accounts}" th:object="${bankAccount}" method="post">
+                        <form th:action="@{/accounts}" onsubmit = "return validateForm()" th:object="${bankAccount}" method="post">
                             <input type="number" id="money"   name="money">
                             <button class="addMoneyButton"   type="submit">Add</button>
                         </form>
